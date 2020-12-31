@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "708436162362",
+    "firebase_url": "https://daward27-v1.firebaseio.com",
+    "project_id": "daward27-v1",
+    "storage_bucket": "daward27-v1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708436162362:android:7dc58f63d3f72da1134203",
+        "android_client_info": {
+          "package_name": "za.co.mogen.da.da_ya_rona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708436162362-32u9u2k0150mfi6p8ajom87mhfr2csuk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvwmXFkM0zep9fIhrEigW47wrVN0PQOdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708436162362-32u9u2k0150mfi6p8ajom87mhfr2csuk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708436162362:android:48313eabe410fa34134203",
+        "android_client_info": {
+          "package_name": "za.co.mogen.da_ya_rona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708436162362-32u9u2k0150mfi6p8ajom87mhfr2csuk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvwmXFkM0zep9fIhrEigW47wrVN0PQOdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708436162362-32u9u2k0150mfi6p8ajom87mhfr2csuk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
