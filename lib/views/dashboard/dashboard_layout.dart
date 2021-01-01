@@ -1,4 +1,7 @@
+import 'package:da_ya_rona/root.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lit_firebase_auth/lit_firebase_auth.dart';
 
 class DashboardLayout extends StatelessWidget {
   const DashboardLayout({
@@ -14,16 +17,16 @@ class DashboardLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (showHeader) DashboardTop(),
-        DashboardBody(),
-        if (showFooter) DashboardBottom(),
+        if (showHeader) _DashboardTop(),
+        _DashboardBody(),
+        if (showFooter) _DashboardBottom(),
       ],
     );
   }
 }
 
-class DashboardBody extends StatelessWidget {
-  const DashboardBody({
+class _DashboardBody extends StatelessWidget {
+  const _DashboardBody({
     Key key,
   }) : super(key: key);
 
@@ -40,8 +43,8 @@ class DashboardBody extends StatelessWidget {
   }
 }
 
-class DashboardBottom extends StatelessWidget {
-  const DashboardBottom({
+class _DashboardBottom extends StatelessWidget {
+  const _DashboardBottom({
     Key key,
   }) : super(key: key);
 
@@ -54,8 +57,8 @@ class DashboardBottom extends StatelessWidget {
   }
 }
 
-class DashboardTop extends StatelessWidget {
-  const DashboardTop({
+class _DashboardTop extends StatelessWidget {
+  const _DashboardTop({
     Key key,
   }) : super(key: key);
 
@@ -63,7 +66,22 @@ class DashboardTop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.red,
-      height: MediaQuery.of(context).size.height * 0.15,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(15, 30, 15, 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Icon(Icons.menu),
+            GestureDetector(
+              onTap: () {
+                context.signOut();
+                Get.to(RootWidget());
+              },
+              child: Icon(Icons.power_settings_new),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

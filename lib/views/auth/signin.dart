@@ -1,3 +1,4 @@
+import 'package:da_ya_rona/root.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lit_firebase_auth/lit_firebase_auth.dart';
@@ -11,12 +12,15 @@ class SignInView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Column(
+        child: ListView(
           children: [
             _LogoSection(),
-            _SignInFormSection(),
-            Spacer(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: _SignInFormSection(),
+            ),
             _SignUpSection(),
+            Spacer(),
           ],
         ),
       ),
@@ -54,11 +58,33 @@ class _SignInFormSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.purple,
-      height: Get.height * 0.6,
+    return Padding(
+      padding: EdgeInsets.fromLTRB(20, 30, 20, 10),
       child: LitAuth(
-        onAuthSuccess: () => Get.to(DashboardView()),
+        config: AuthConfig(
+          title: SizedBox(height: 0),
+          emailTextField: TextFieldConfig(
+            inputDecoration: InputDecoration(
+              labelText: 'Username:',
+              icon: Icon(Icons.account_circle),
+            ),
+          ),
+          passwordTextField: TextFieldConfig(
+            inputDecoration: InputDecoration(
+              labelText: 'Password:',
+              icon: Icon(Icons.vpn_key),
+            ),
+          ),
+          signInButton: ButtonConfig.raised(
+            themedata: ButtonThemeData(
+              buttonColor: Colors.blue[800],
+              hoverColor: Colors.blue,
+              textTheme: ButtonTextTheme.primary,
+            ),
+            child: Text('Sign In'),
+          ),
+        ),
+        onAuthSuccess: () => Get.to(RootWidget()),
       ),
     );
   }
@@ -72,8 +98,15 @@ class _LogoSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red,
-      height: Get.height * 0.3,
+      color: Color(0xFF042048),
+      height: Get.height * 0.4,
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        child: Image.asset(
+          'assets/images/da_logo_1.jpg',
+          fit: BoxFit.fitWidth,
+        ),
+      ),
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:da_ya_rona/views/views.dart';
+import 'package:da_ya_rona/root.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lit_firebase_auth/lit_firebase_auth.dart';
@@ -9,14 +9,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return LitAuthInit(
       authProviders: AuthProviders(
-        anonymous: true,
+        anonymous: false,
         emailAndPassword: true,
       ),
       child: GetMaterialApp(
         title: 'Firebase Starter',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.blue),
-        home: SignInView(),
+        home: RootWidget(),
       ),
     );
   }
