@@ -84,7 +84,9 @@ class _SignInFormSection extends StatelessWidget {
             child: Text('Sign In'),
           ),
         ),
-        onAuthSuccess: () => Get.to(RootWidget()),
+        onAuthSuccess: () {
+          Get.to(RootWidget());
+        },
       ),
     );
   }

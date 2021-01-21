@@ -1,3 +1,4 @@
+import 'package:da_ya_rona/models/models.dart';
 import 'package:da_ya_rona/root.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -32,13 +33,16 @@ class _DashboardBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = Get.find<AppUser>();
+
     return Expanded(
       child: Container(
-          color: Colors.purple,
-          height: MediaQuery.of(context).size.height * 0.15,
-          child: Center(
-            child: Text('Dashboard Layout'),
-          )),
+        color: Colors.purple,
+        height: MediaQuery.of(context).size.height * 0.15,
+        child: Center(
+          child: Text(user.email),
+        ),
+      ),
     );
   }
 }

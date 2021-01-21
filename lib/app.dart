@@ -9,11 +9,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return LitAuthInit(
       authProviders: AuthProviders(
-        anonymous: false,
         emailAndPassword: true,
+        google: true,
+        github: true,
+        twitter: true,
       ),
       child: GetMaterialApp(
-        title: 'Firebase Starter',
+        title: 'DA ya Rona',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.blue),
         home: RootWidget(),
